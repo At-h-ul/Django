@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Laptop</title>
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}" />
+  </head>
+  <body>
+
+  <div class="container">  
+  <form id="contact" action="" method="post">
+    {%csrf_token%}
+    <div class="container">  
+        <form id="contact" action="" method="post">
+          <h3>Custom Laptop</h3>
+          <fieldset>
+            <input placeholder="Brand" type="text" name="brand" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Model" type="text" namne="model" tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Processor" type="text" name="processor" tabindex="3" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Ram" type="text" name="ram" tabindex="4" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Storage" type="text" name="storage" tabindex="5" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Budget" type="text" name="budget" tabindex="6" required>
+          </fieldset>
+          <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          </fieldset>
+          <p class="copyright">Return to <a href="{% url 'dashboard' %}" target="_blank" title="">home</a></p>
+        </form>
+      </div>
+    </body>   
+</html>   

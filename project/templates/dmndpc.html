@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom PC</title>
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}" />
+  </head>
+  <body>
+
+  <div class="container">  
+  <form id="contact" action="" method="post">
+    {%csrf_token%}
+    <div class="container">  
+        <form id="contact" action="" method="post">
+          <h3>Colorlib Contact Form</h3>
+          <h4>Contact us for custom quote</h4>
+          <fieldset>
+            <input placeholder="Processor" type="text" name="proce" tabindex="1" required autofocus>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Motherboard" type="text" name="motherboard" tabindex="2" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Ram" type="text" name="ram1" tabindex="3" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Storage" type="text" name="storage1" tabindex="4" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Graphics Card(optional)" type="text" name="gfxcard" tabindex="5" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Cabinet" type="text" name="cabinet" tabindex="6" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Power Supply Unit" type="text" name="psu" tabindex="7" required>
+          </fieldset>
+          <fieldset>
+            <input placeholder="Budget" type="text" name="budget1" tabindex="8" required>
+          </fieldset>
+          <fieldset>
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          </fieldset>
+          <p class="copyright">Return to <a href="{% url 'dashboard' %}" target="_blank" title="">home</a></p>
+        </form>
+      </div>
+    </body>   
+</html>   

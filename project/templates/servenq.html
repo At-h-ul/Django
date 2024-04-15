@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Service Enquiry</title>
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}" />
+  </head>
+  <body>
+
+  <div class="container">  
+  <form id="contact" action="" method="post">
+    {%csrf_token%}
+    <h3>Service Enquiry</h3>
+    <h4></h4>
+    <fieldset>
+      <input placeholder="Your product" type="text" name="product" tabindex="1" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Product manufacturer" type="text" name="manufacturer" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your product issue here...." tabindex="3" name="issue" required></textarea>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Phone Number" type="text" tabindex="4" name="phone" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Your address" type="text" tabindex="5" name="address" required></textarea>
+    </fieldset>
+    <label for="Date">Date:</label>
+    <input type="date" id="date" name="date">
+    <label for="Time">Time:</label>
+    <input type="time" id="time" name="time">
+  
+      <button name="submit" type="submit" id="contact-submit" >Submit</button>
+    </fieldset>
+    <p class="">Return to <a href="{% url 'dashboard' %}" target="_blank" title="">home</a></p>
+  </form>
+  
+</div>
+  </body>
+</html>

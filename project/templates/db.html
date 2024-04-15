@@ -1,0 +1,106 @@
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<!-- user_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Base styles */
+        .navbar {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        body {
+            background-color: white;
+        }
+        .container {
+            margin: 20px;
+        }
+        select, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            /* Adjust styles for smaller screens */
+            .navbar {
+                padding: 5px;
+            }
+            .container {
+                margin: 10px;
+            }
+            select, button {
+                padding: 5px;
+                margin: 3px;
+            }
+        }
+        /* Add more media queries and responsive styles as needed */
+    </style>
+</head>
+<body>
+    {% if user.is_authenticated%}
+    {%csrf_token%}
+    <div class="navbar">
+        <div>
+            Welcome, {{ user.username }}!
+        </div>
+        <div>
+            <a href="{% url 'signout' %}">Sign Out</a>
+        </div>
+    </div>
+    <div class="container">
+        <select id="dropdownMenu" onchange="navigate()">
+            <option value="">Products</option>
+            <option value="{% url 'newproduct' %}">New Products</option>
+            <option value="{% url 'oldproduct' %}">Old Products</option>
+        </select>
+        <button onclick="location.href='/custom_products/'">Custom Products</button>
+        <a href="{% url 'service' %}">Service Enquiry</a>
+    </div>
+    <div class="container">
+        
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Process</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for enquiry in service_enquiries %}
+                <tr>
+                    <td>{{ enquiry.product_issue }}</td>
+                    <td>{{ enquiry.admin_desc }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+
+    <script>
+        function navigate() {
+          var dropdown = document.getElementById("dropdownMenu");
+          var selectedValue = dropdown.options[dropdown.selectedIndex].value;
+          if (selectedValue) {
+            window.location.href = selectedValue;
+          }
+        }
+        </script>
+</body>
+</html>
+
+

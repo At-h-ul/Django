@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Request Products</title>
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}" />
+  </head>
+  <body>
+
+  <div class="container">  
+  <form id="contact" action="" method="post">
+    {%csrf_token%}
+    <h3>Request for other products</h3>
+    <h4></h4>
+    <fieldset>
+      <input placeholder="Product" type="text" name="prod" tabindex="1" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Product description" tabindex="2" name="proddesc" required></textarea>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Budget" type="text" tabindex="3" name="bud" required>
+    </fieldset>
+     <button name="submit" type="submit" id="contact-submit" >Submit</button>
+    </fieldset>
+    <p class="">Return to <a href="{% url 'dashboard' %}" target="_blank" title="">home</a></p>
+  </form>
+  
+</div>
+  </body>
+</html>

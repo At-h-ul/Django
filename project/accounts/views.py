@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from services.models import ServiceEnquiry
+
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    service_enquiries = ServiceEnquiry.objects.all()
+    return render(request, 'dashboard.html', {'service_enquiries': service_enquiries})
+
 
 def signin(request):
 
