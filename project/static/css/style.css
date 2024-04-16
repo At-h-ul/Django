@@ -464,19 +464,9 @@ ul.btn li:last-child {
      padding-right: 130px;
 }
 
-#banner1 .carousel-indicators {
-     left: inherit;
-     bottom: 40px;
-}
 
-#banner1 .carousel-indicators li {
-     width: 20px;
-     height: 20px;
-     border-radius: 20px;
-     background: #48ca95;
-     margin-right: 5px;
-     margin-left: 5px;
-}
+
+
 
 #banner1 .carousel-indicators li.active {
      background: #ffffff;

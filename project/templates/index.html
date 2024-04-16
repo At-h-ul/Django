@@ -48,7 +48,7 @@
                      <div class="full">
                         <div class="center-desk">
                            <div class="logo">
-                              <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="#" /></a>
+                              <a href="{% url 'home' %}"><img src="{% static 'images/lo.png' %}" alt="#" /></a>
                            </div>
                         </div>
                      </div>
@@ -61,7 +61,7 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item active">
-                                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                                    <!--a-- class="nav-link" href="{% url 'home' %}">Home</!--a-->
                                  </li>
                                  <li class="nav-item">
                                     <a class="nav-link" href="{% url 'aboutus' %}">About</a>
@@ -87,13 +87,10 @@
       <!-- end header -->
       <!-- banner -->
       <section class="banner_main">
-         <div id="banner1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-               <li data-target="#banner1" data-slide-to="0" class="active"></li>
-               <li data-target="#banner1" data-slide-to="1"></li>
-               <li data-target="#banner1" data-slide-to="2"></li>
-               <li data-target="#banner1" data-slide-to="3"></li>
-               <li data-target="#banner1" data-slide-to="4"></li>
+         <div id="banner1" class="" data-ride="">
+            <ol class="">
+               <li data-target="#banner1" data-slide-to="" class="active"></li>
+               
             </ol>
             <div class="carousel-inner">
                <div class="carousel-item active">
@@ -105,12 +102,12 @@
                                  <span>Computer And Laptop</span>
                                  <h1>Accessories</h1>
                                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
-                                 <a href="#">Buy Now </a> <a href="contact.html">Contact </a>
+                                 <a href="#">Visit Us</a> <a href="{% url 'contactus' %}">Contact </a>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="text_img">
-                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                                 <figure><img src="{% static 'images/pct.png' %}" alt="#"/></figure>
                               </div>
                            </div>
                         </div>
@@ -126,12 +123,12 @@
                                  <span>Computer And Laptop</span>
                                  <h1>Accessories</h1>
                                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
-                                 <a href="#">Buy Now </a> <a href="contact.html">Contact </a>
+                                 <a href="#">Visit Us</a> <a href="{% url 'contactus' %}">Contact </a>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="text_img">
-                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                                 <figure><img src="{% static 'images/pct.png' %}" alt="#"/></figure>
                               </div>
                            </div>
                         </div>
@@ -147,12 +144,12 @@
                                  <span>Computer And Laptop</span>
                                  <h1>Accessories</h1>
                                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
-                                 <a href="#">Buy Now </a> <a href="contact.html">Contact </a>
+                                 <a href="#">Visit Us</a> <a href="{% url 'contactus' %}">Contact </a>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="text_img">
-                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                                 <figure><img src="{% static 'images/pct.png' %}" alt="#"/></figure>
                               </div>
                            </div>
                         </div>
@@ -168,12 +165,12 @@
                                  <span>Computer And Laptop</span>
                                  <h1>Accessories</h1>
                                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
-                                 <a href="#">Buy Now </a> <a href="contact.html">Contact </a>
+                                 <a href="#">Visit Us</a> <a href="{% url 'contactus' %}">Contact </a>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="text_img">
-                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                                 <figure><img src="{% static 'images/pct.png' %}" alt="#"/></figure>
                               </div>
                            </div>
                         </div>
@@ -189,12 +186,12 @@
                                  <span>Computer And Laptop</span>
                                  <h1>Accessories</h1>
                                  <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
-                                 <a href="#">Buy Now </a> <a href="contact.html">Contact </a>
+                                 <a href="#">Visit Us</a> <a href="{% url 'contactus' %}">Contact </a>
                               </div>
                            </div>
                            <div class="col-md-6">
                               <div class="text_img">
-                                 <figure><img src="images/pct.png" alt="#"/></figure>
+                                 <figure><img src="{% static 'images/pct.png' %}" alt="#"/></figure>
                               </div>
                            </div>
                         </div>
@@ -217,23 +214,23 @@
             <div class="row">
                <div class="col-md-4">
                   <div class="box_text">
-                     <i><img src="images/thr.png" alt="#"/></i>
+                     <i><img src="{% static 'images/thr.png' %}" alt="#"/></i>
                      <h3>Computer</h3>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                     <p>New, used products and service is available</p>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="box_text">
-                     <i><img src="images/thr1.png" alt="#"/></i>
-                     <h3>Laptop</h3>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                     <i><img src="{% static 'images/thr1.png' %}" alt="#"/></i>
+                     <h3>Laptops</h3>
+                     <p>New, used products and service is available</p>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="box_text">
-                     <i><img src="images/thr2.png" alt="#"/></i>
-                     <h3>Tablet</h3>
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                     <i><img src="{% static 'images/thr3.jpg' %}" alt="#"/></i>
+                     <h3>CCTV</h3>
+                     <p>Afordable plans and installation available</p>
                   </div>
                </div>
             </div>
@@ -249,14 +246,12 @@
             <div class="row">
                <div class="col-md-6">
                   <div class="titlepage">
-                     <p>Every Computer and laptop</p>
-                     <h2>Up to 40% off !</h2>
-                     <a class="read_more" href="#">Shop Now</a>
+                     
                   </div>
                </div>
                <div class="col-md-6">
                   <div class="laptop_box">
-                     <figure><img src="images/pc.png" alt="#"/></figure>
+                    
                   </div>
                </div>
             </div>
@@ -277,7 +272,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                     <img class="logo1" src="images/logo1.png" alt="#"/>
+                     <img class="logo1" src="{% static 'images/lo.png' %}" alt="#"/>
 
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
@@ -293,11 +288,7 @@
                      </ul>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                     <form class="bottom_form">
-                        <h3>Newsletter</h3>
-                        <input class="enter" placeholder="Enter your email" type="text" name="Enter your email">
-                        <button class="sub_btn">subscribe</button>
-                     </form>
+                     
                   </div>
                </div>
             </div>
@@ -305,7 +296,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+                       
                      </div>
                   </div>
                </div>
