@@ -1,15 +1,16 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render
+from .models import WebsiteDetails
 
 
 def home(request):
-    return render(request, 'index.html')
+    webdetails = WebsiteDetails.objects.all()
+    return render(request, 'index.html', {'webdetails': webdetails})
 
 
 def aboutus(request):
-    return render(request, 'about.html')
+    webdetails = WebsiteDetails.objects.all()
+    return render(request, 'about.html', {'webdetails': webdetails})
 
 
 def contactus(request):

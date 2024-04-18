@@ -89,7 +89,9 @@
                <div class="col-md-5">
                   <div class="titlepage">
                      <h2>About Us</h2>
-                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                     {% for details in webdetails %}
+                     <p>{{ details.web_about }}</p>
+                     {% endfor %}
                      <a class="read_more" href="#">Read More</a>
                   </div>
                </div>
@@ -114,13 +116,18 @@
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                      <h3>About Us</h3>
                      <ul class="about_us">
-                        <li>dolor sit amet, consectetur<br> magna aliqua. Ut enim ad <br>minim veniam, <br> quisdotempor incididunt r</li>
+                        {% for details in webdetails %}
+                   
+                        <li>{{ details.web_about }}</li>
+                        {% endfor %}
                      </ul>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                      <h3>Contact Us</h3>
                      <ul class="conta">
-                        <li>dolor sit amet,<br> consectetur <br>magna aliqua.<br> quisdotempor <br>incididunt ut e </li>
+                        {% for details in webdetails %}
+                        <li>{{ details.web_contact }}</li>
+                        {% endfor %}
                      </ul>
                   </div>
                </div>
@@ -129,7 +136,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
+                        
                      </div>
                   </div>
                </div>

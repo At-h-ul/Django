@@ -101,7 +101,9 @@
                               <div class="text-bg">
                                  <span>Computer And Laptop</span>
                                  <h1>Accessories</h1>
-                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or </p>
+                                 {% for details in webdetails %}
+                                    <li>{{ details.web_about }}</li>
+                                 {% endfor %}
                                  <a href="#">Visit Us</a> <a href="{% url 'contactus' %}">Contact </a>
                               </div>
                            </div>
@@ -278,13 +280,16 @@
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                      <h3>About Us</h3>
                      <ul class="about_us">
-                        <li>dolor sit amet, consectetur<br> magna aliqua. Ut enim ad <br>minim veniam, <br> quisdotempor incididunt r</li>
-                     </ul>
+                        {% for details in webdetails %}
+                        <li>{{ details.web_about }}</li>
+                        {% endfor %}
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                      <h3>Contact Us</h3>
                      <ul class="conta">
-                        <li>dolor sit amet,<br> consectetur <br>magna aliqua.<br> quisdotempor <br>incididunt ut e </li>
+                        {% for details in webdetails %}
+                        <li>{{ details.web_contact }}</li>
+                        {% endfor %}
                      </ul>
                   </div>
                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
