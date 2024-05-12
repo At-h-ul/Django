@@ -92,6 +92,32 @@
             
         </div>
 
+
+        <h2>#</h2>
+        <table border="1" style="margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th colspan="4" style="text-align: center;">Service Enquiry</th>
+                </tr>
+                <tr>
+                    <th>Product</th>
+                    <th>Product Issue</th>
+                    <th>Date</th>
+                    <th>Admin Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for enquiry in service_enquiries %}
+                <tr>
+                    <td>{{ enquiry.product_name }}</td>
+                    <td>{{ enquiry.product_issue }}</td>
+                    <td>{{ enquiry.enquiry_date }}</td>
+                    <td>{{ enquiry.admin_desc }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
         <!--div class="dash-content">
             <div-- class="overview">
                 <div class="title">

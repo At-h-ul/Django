@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,10 +18,9 @@
     />
   </head>
   <body>
-    
     <div class="container">
       <header>Signup</header>
-      <form action="" method="POST">
+      <form id="signup-form" action="" method="POST">
         {% csrf_token %}
         <div class="field user-name-field">
           <div class="input-field">
@@ -30,7 +29,7 @@
         </div>
         <div class="field email-field">
           <div class="input-field">
-            <input type="email" placeholder="Enter your email" name="email" />
+            <input type="email" placeholder="Enter your email" name="email" id="email" />
           </div>
          
         </div>
@@ -65,11 +64,14 @@
         <div class="input-field button">
           <input type="submit" value="Submit Now" />
         </div>
+        {% for msg in messages %}
+          <h3>{{ msg }}</h3>
+        {% endfor %}
       </form>
       <div class="sign-txt">Have an account? <a href="{% url 'signin' %}">Login here</a></div>
     </div>
 
-    <!-- JavaScript 
-   <script src="{% static 'js/script.js' %}"></script>-->
+
+   <!--script src="{% static 'js/script.js' %}"></!--script-->
   </body>
 </html>

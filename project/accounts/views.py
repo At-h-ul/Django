@@ -28,9 +28,27 @@ def signup(request):
         username=request.POST['username']
         email=request.POST['email']
         password = request.POST['password']
+        password1 = request.POST['password1']
+
+        if not username or not email or not password:
+            messages.error(request, 'Please fill in all the fields.')
+            return redirect('signup')
+
+        if password != password1:
+            messages.error(request, 'Passwords do not match.')
+            return redirect('signup')
+        
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username is already taken.')
+            return redirect('signup')
+
+        if User.objects.filter(email=email).exists():
+            messages.error(request, 'Email is already registered.')
+            return redirect('signup')
 
         user=User.objects.create_user(username=username,email=email,password=password)
         user.save();
+        
         return redirect('signin')
     
     else:
