@@ -14,9 +14,10 @@ def service(request):
         u_address = request.POST.get('address', '')
         enq_date = request.POST.get('date', '')
         enq_time = request.POST.get('time', '')
+        user = request.user
 
 
-        enquiry = ServiceEnquiry(product_name = pro_name, product_manuf = pro_manuf, product_issue = pro_issue, user_phone = u_phone, user_address = u_address, enquiry_date = enq_date, enquiry_time = enq_time)
+        enquiry = ServiceEnquiry(user=user,product_name = pro_name, product_manuf = pro_manuf, product_issue = pro_issue, user_phone = u_phone, user_address = u_address, enquiry_date = enq_date, enquiry_time = enq_time)
         enquiry.save()
      
 
@@ -47,10 +48,10 @@ def demandlaptop(request):
         lap_ram = request.POST.get('ram', '')
         lap_storage = request.POST.get('storage', '')
         lap_budget = request.POST.get('budget', '')
-        
+        user = request.user
 
 
-        dmndlaptop = OnDmndLap(dmndlap_brand = lap_brnd, dmndlap_model = lap_model, dmndlap_proce = lap_processor, dmndlap_ram = lap_ram, dmndlap_stor = lap_storage, dmndlap_budg = lap_budget)
+        dmndlaptop = OnDmndLap(user=user,dmndlap_brand = lap_brnd, dmndlap_model = lap_model, dmndlap_proce = lap_processor, dmndlap_ram = lap_ram, dmndlap_stor = lap_storage, dmndlap_budg = lap_budget)
         dmndlaptop.save()
      
 
@@ -72,9 +73,10 @@ def demandpc(request):
         pc_cabinet = request.POST.get('cabinet', '')
         pc_psu = request.POST.get('psu', '')
         pc_budget = request.POST.get('budget1', '')
+        user = request.user
 
 
-        dmndpc = OnDmndPc(dmndpc_proc = pc_processor, dmndpc_mobo = pc_motherboard, dmndpc_ram = pc_ram, dmndpc_stor = pc_storage, dmndpc_gfx = pc_gfxcard, dmndpc_cab = pc_cabinet, dmndpc_psu = pc_psu, dmndpc_budg = pc_budget)
+        dmndpc = OnDmndPc(user=user,dmndpc_proc = pc_processor, dmndpc_mobo = pc_motherboard, dmndpc_ram = pc_ram, dmndpc_stor = pc_storage, dmndpc_gfx = pc_gfxcard, dmndpc_cab = pc_cabinet, dmndpc_psu = pc_psu, dmndpc_budg = pc_budget)
         dmndpc.save()
      
 
@@ -91,8 +93,9 @@ def demandothers(request):
         oth_prod = request.POST.get('prod', '')
         oth_desc = request.POST.get('proddesc', '')
         oth_budg = request.POST.get('bud', '')
+        user = request.user
 
-        dmndoth = OnDmndOth(dmndoth_prod = oth_prod, dmndoth_desc = oth_desc, dmndoth_budg = oth_budg)
+        dmndoth = OnDmndOth(user=user,dmndoth_prod = oth_prod, dmndoth_desc = oth_desc, dmndoth_budg = oth_budg)
         dmndoth.save()
      
 

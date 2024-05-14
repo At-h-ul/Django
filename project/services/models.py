@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class ServiceEnquiry(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     product_name = models.CharField(max_length=20)
     product_manuf = models.CharField(max_length=30)
     product_issue = models.CharField(max_length=250)
@@ -16,6 +18,7 @@ class ServiceEnquiry(models.Model):
         return self.product_name
 
 class NewProducts(models.Model): 
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     newprod_name = models.CharField(max_length=100)
     newprod_desc = models.CharField(max_length=500)
     newprod_price = models.CharField(max_length=10)
@@ -25,6 +28,7 @@ class NewProducts(models.Model):
         return self.newprod_name
     
 class UsedProducts(models.Model): 
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     usedprod_name = models.CharField(max_length=100)
     usedprod_price = models.CharField(max_length=10)
     usedprod_cond = models.CharField(max_length=20)
@@ -34,6 +38,7 @@ class UsedProducts(models.Model):
         return self.usedprod_name
     
 class OnDmndLap(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     dmndlap_brand = models.CharField(max_length=20)
     dmndlap_model = models.CharField(max_length=20)
     dmndlap_proce = models.CharField(max_length=20)
@@ -46,6 +51,7 @@ class OnDmndLap(models.Model):
         return self.dmndlap_model
 
 class OnDmndPc(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     dmndpc_proc = models.CharField(max_length=20)
     dmndpc_mobo = models.CharField(max_length=20)
     dmndpc_ram = models.CharField(max_length=20)
@@ -60,6 +66,7 @@ class OnDmndPc(models.Model):
         return self.dmndpc_budg
     
 class OnDmndOth(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     dmndoth_prod = models.CharField(max_length=20, blank=True, null=True)
     dmndoth_desc = models.CharField(max_length=150)
     dmndoth_budg = models.CharField(max_length=20)
