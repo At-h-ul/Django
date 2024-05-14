@@ -2,15 +2,34 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from services.models import ServiceEnquiry
+from services.models import ServiceEnquiry, OnDmndLap, OnDmndPc, OnDmndOth
 
 @login_required
 def dashboard(request):
     if request.session.get('user_logged_in'):
-      service_enquiries = ServiceEnquiry.objects.filter(user=request.user)
-      return render(request, 'dashboard.html', {'service_enquiries': service_enquiries})
+        # Fetch service enquiries
+        service_enquiries = ServiceEnquiry.objects.filter(user=request.user)
+        # Fetch demand laptop
+        demand_laptop = OnDmndLap.objects.filter(user=request.user)
+        # Fetch demand PC
+        demand_pc = OnDmndPc.objects.filter(user=request.user)
+        # Fetch demand others
+        demand_others = OnDmndOth.objects.filter(user=request.user)
+        
+        # Construct the context dictionary
+        context = {
+            'service_enquiries': service_enquiries,
+            'demand_laptop': demand_laptop,
+            'demand_pc': demand_pc,
+            'demand_others': demand_others
+        }
+        
+        # Render the dashboard template with the context data
+        return render(request, 'dashboard.html', context)
     else:
-       return redirect('signin')
+        # Redirect to the sign-in page if user is not logged in
+        return redirect('signin')
+
 
 
 def signin(request):
@@ -70,6 +89,7 @@ def signup(request):
 def signout(request):
     if request.session.get('user_logged_in'):
         auth.logout(request)
-        # Clear the session variable indicating user login status
-        del request.session['user_logged_in']
+        # Check if the session variable exists before deleting it
+        if 'user_logged_in' in request.session:
+            del request.session['user_logged_in']
     return redirect('signin')

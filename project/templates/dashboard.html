@@ -117,6 +117,89 @@
                 {% endfor %}
             </tbody>
         </table>
+        <h2></h2>
+        <table border="1" style="margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th colspan="5" style="text-align: center;">
+                        Custom Laptop</th>
+                </tr>
+                <tr>
+                    <th>Model</th>
+                    <th>Storage</th>
+                    <th>Ram</th>
+                    <th>Budget</th>
+                    <th>Admin Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for laptop in demand_laptop %}
+                <tr>
+                    <td>{{ laptop.dmndlap_brand }}</td>
+                    <td>{{ laptop.dmndlap_stor }}</td>
+                    <td>{{ laptop.dmndlap_ram }}</td>
+                    <td>{{ laptop.dmndlap_budg }}</td>
+                    <td>{{ laptop.admin_stat }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2></h2>
+        <table border="1" style="margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th colspan="6" style="text-align: center;">
+                        Custom PC</th>
+                </tr>
+                <tr>
+                    <th>Processor</th>
+                    <th>Motherboard</th>
+                    <th>Ram</th>
+                    <th>Storage</th>
+                    <th>Budget</th>
+                    <th>Admin Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pc in demand_pc %}
+                <tr>
+                    <td>{{ pc.dmndpc_proc }}</td>
+                    <td>{{ pc.dmndpc_mobo }}</td>
+                    <td>{{ pc.dmndpc_ram }}</td>
+                    <td>{{ pc.dmndpc_stor }}</td>
+                    <td>{{ pc.dmndpc_budg }}</td>
+                    <td>{{ pc.admin_stat }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>    
+
+        <h2></h2>
+        <table border="1" style="margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th colspan="4" style="text-align: center;">
+                        Custom Products</th>
+                </tr>
+                <tr>
+                    <th>Product</th>
+                    <th>Description</th>
+                    <th>Budget</th>
+                    <th>Admin Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for oth in demand_others %}
+                <tr>
+                    <td>{{ oth.dmndoth_prod }}</td>
+                    <td>{{ oth.dmndoth_desc }}</td>
+                    <td>{{ oth.dmndoth_budg }}</td>
+                    <td>{{ oth.admin_stat }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
 
         <!--div class="dash-content">
             <div-- class="overview">

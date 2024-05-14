@@ -48,7 +48,7 @@ class OnDmndLap(models.Model):
     admin_stat = models.CharField(max_length=30, blank=True, null=True)
 
     def __str__(self):
-        return self.dmndlap_model
+        return self.dmndlap_budg
 
 class OnDmndPc(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
